@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>Application_outlet.Business</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>d96b0009-a65a-4166-8cce-9edc0a85a879</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="JWT" Version="9.0.3" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.23.1" />
+    <PackageReference Include="Microsoft.Owin.Security.Jwt" Version="4.2.2" />
+  </ItemGroup>
+
+</Project>
