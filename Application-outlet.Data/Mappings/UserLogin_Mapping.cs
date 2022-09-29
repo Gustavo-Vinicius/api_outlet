@@ -8,7 +8,8 @@ namespace Application_outlet.Data.Mappings
     {
          public void Configure(EntityTypeBuilder <UserLogin> entity)
         {
-               entity.ToTable("user_login");
+              // entity.ToTable("user_login");
+                entity.ToTable("UserLogin");
 
                 entity.Property(e => e.Password).HasMaxLength(100);
 

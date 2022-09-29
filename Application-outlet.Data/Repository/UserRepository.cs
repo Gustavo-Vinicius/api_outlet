@@ -23,13 +23,13 @@ namespace Application_outlet.Data.Repository
 
         }
 
-        public async Task<UserLogin> BuscaUsuarioAsync(string UserName , string Password)
+        public async Task<UserLogin> BuscaUsuarioAsync(string UserName , string Password) // Corrigir o user_login
         {
-            var query = "SELECT \"UserName\", \"Password\"  FROM user_login WHERE \"UserName\" = @UserName and \"Password\" = @Password";
+            var query = "SELECT \"UserName\", \"Password\", \"Role\" FROM \"UserLogin\" WHERE \"UserName\" = @UserName and \"Password\" = @Password";
 
              return (await _context.Database.GetDbConnection().QuerySingleAsync<UserLogin>(query, new {UserName, Password}));
 
-            
+                     
         }
     }
 }

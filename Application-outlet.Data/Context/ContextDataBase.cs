@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
+
 using Application_outlet.Business.Models;
-using Application_outlet.Data.Context;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Application_outlet.Data.Context
 {
@@ -19,7 +17,7 @@ namespace Application_outlet.Data.Context
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseNpgsql("Host=localhost;Database=outletservice;Username=postgres;Password=admin");
+                optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=outletservice;UserId=postgres;Password=12345@rad");
             }
         }
         
