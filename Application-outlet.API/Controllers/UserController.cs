@@ -17,7 +17,11 @@ namespace Application_outlet.API.Controllers
         {
             _user = user;
         }
-
+        /// <summary>
+        /// Efetua o cadastro de login do cliente.
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         [HttpPost("adciona-usuario")]
         public async Task<IActionResult> AdiconarUsuarioAsync(UserLogin user)
         {
@@ -25,7 +29,11 @@ namespace Application_outlet.API.Controllers
 
             return Ok();
         }
-
+        /// <summary>
+        /// Efetua Autenticação do login cadastrado.
+        /// </summary>
+        /// <param name="cliente"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("login")]
         [AllowAnonymous]
@@ -42,7 +50,8 @@ namespace Application_outlet.API.Controllers
 
             var token = tokenUser.GenerateToken(user);
 
-            cliente.Password = "";
+            user.Password = " ";
+
 
             return new
             {
@@ -50,5 +59,14 @@ namespace Application_outlet.API.Controllers
                 token = token
             };
         }
+
+       /// <summary>
+       /// Acesso somente para funcionario
+       /// </summary>
+       /// <returns></returns>
+        [HttpGet]
+        [Route("employee")]
+        [Authorize(Roles = "employee, manager")]
+        public string Employee() => "funcionario";
     }
 }

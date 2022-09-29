@@ -8,6 +8,7 @@ builder.Services.AddCors();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddDependencyInjectionConfiguration();
+builder.Services.AddSwaggerConfiguration();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAuthentication(x => 
 {
@@ -15,6 +16,7 @@ builder.Services.AddAuthentication(x =>
     x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 
 });
+//builder.Services.AddSwaggerConfiguration();
 
 var app = builder.Build();
 
